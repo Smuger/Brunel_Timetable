@@ -1,0 +1,6 @@
+{	
+	"Model":"Corolla",
+	"ListOfOptions": [{
+		"Standard": ["AC", "20InchWheels", "ABS"],
+		"PaidOptions": "50calMachinegun"}]
+}

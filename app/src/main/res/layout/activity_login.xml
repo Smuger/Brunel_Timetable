@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:foregroundGravity="center_horizontal|clip_vertical"
+            android:src="@drawable/brunel_logo" />
+
+        <AutoCompleteTextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_id"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColorHighlight="@color/brunelDarkBlue"
+            android:textColorLink="@color/brunelDarkBlue" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="@color/brunelDarkBlue">
+
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:imeActionId="6"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorLink="@color/brunelDarkBlue" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_student_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:outlineAmbientShadowColor="@color/brunelDarkBlue"
+            android:outlineSpotShadowColor="@color/brunelDarkBlue"
+            android:textColorHint="@color/brunelDarkBlue"
+            app:boxBackgroundColor="@color/brunelDarkBlue"
+            app:boxStrokeColor="@color/brunelDarkBlue">
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/brunelDarkBlue"
+            android:onClick="signInButtonPushed"
+            android:text="Sign IN"
+            android:textColor="@color/brunelWhite" />
+
+        <TextView
+            android:id="@+id/hintForUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="TEST"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
