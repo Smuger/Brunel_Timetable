@@ -20,6 +20,8 @@
         <activity
             android:name=".Activity.DayTimetableActivity"
             android:label="@string/title_activity_day_timetable"></activity>
+        <activity android:name=".Activity.FragmentPagerSupport"
+            android:label="FragmentPagerSupportActivity"></activity>
     </application>
 
 </manifest>

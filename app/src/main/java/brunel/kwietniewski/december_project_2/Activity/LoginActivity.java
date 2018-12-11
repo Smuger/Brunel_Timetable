@@ -22,6 +22,11 @@ public class LoginActivity extends AppCompatActivity {
 
     public void signInButtonPushed(View view){
         Toast.makeText(this, "LOGIN IN", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(LoginActivity.this, DayTimetableActivity.class));
+
+        /**
+         * TODO: Update fragments to v4
+         */
+        //startActivity(new Intent(LoginActivity.this, DayTimetableActivity.class));
+        startActivity(new Intent(LoginActivity.this, FragmentPagerSupport.class));
     }
 }

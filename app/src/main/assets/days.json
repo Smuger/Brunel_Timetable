@@ -1,6 +1,71 @@
-{	
-	"Model":"Corolla",
-	"ListOfOptions": [{
-		"Standard": ["AC", "20InchWheels", "ABS"],
-		"PaidOptions": "50calMachinegun"}]
+{
+    "Monday":{
+      "Class0":{"Name":"CS2004",
+        "Type": "Lecture",
+      "Room": "LECT E",
+      "Start": "09:00",
+      "End": "10:00",
+      "Lecturer": "Swift"},
+      "Class1":{"Name":"CS2002",
+        "Type": "Lecture",
+        "Room": "LECT F",
+        "Start": "10:00",
+        "End": "11:00",
+        "Lecturer": "XiaHui"},
+      "Class2":{"Name":"CS2002",
+        "Type": "Lab",
+        "Room": "LECT E",
+        "Start": "11:00",
+        "End": "12:00",
+        "Lecturer": "XiaHui"},
+      "Class3":{"Name":"CS2004",
+        "Type": "Lab",
+        "Room": "HALB 223",
+        "Start": "15:00",
+        "End": "17:00",
+        "Lecturer": "Swift"}
+    },
+    "Tuesday":{
+      "Class0":{"Name":"CS2554",
+        "Type": "Lecture",
+      "Room": "LECT E",
+      "Start": "14:00",
+      "End": "15:00",
+      "Lecturer": "Grosan"},
+    "Class1":{
+      "Name": "CS2005",
+      "Type": "Lecture",
+      "Room": "LECT F",
+      "Start": "16:00",
+      "End": "17:00",
+      "Lecturer": "XiaHui"
+    }},
+    "Wednesday":{
+      "Class0":{"Name":"CS2005",
+        "Type": "Lab",
+      "Room": "WLFB 013",
+      "Start": "09:00",
+      "End": "10:00",
+      "Lecturer": "Anagnostou"},
+    "Class1":{"Name":"CS2001",
+      "Type": "Lab",
+      "Room": "WLFB 013",
+      "Start": "11:00",
+      "End": "13:00",
+      "Lecturer": "Kent"}},
+    "Thursday":{},
+    "Friday":{
+      "Class0":{"Name":"CS2003","Type": "lecture",
+        "Room": "LECT E",
+        "Start": "11:00",
+        "End": "13:00",
+        "Lecturer": "Perry"},
+      "Class1":{"Name":"CS2005","Type": "lab",
+        "Room": "LECT F",
+        "Start": "16:00",
+        "End": "17:00",
+        "Lecturer": "Anagnostou"}
+    },
+    "Saturday":{},
+    "Sunday":{}
 }

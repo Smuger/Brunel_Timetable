@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/brunelWhite</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/brunelWhite</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
+
 
 </resources>

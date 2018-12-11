@@ -9,6 +9,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.PagerAdapter;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -77,37 +79,107 @@ public class DayTimetableActivity extends Activity {
             e.printStackTrace();
         }
 
-        // CHANGE JSON STRING TO JSON OBJECT
-        JSONArray ListOfOptions = null;
+        System.out.println(json);
+
+        // Variables JSON
         JSONObject jsonObject = null;
+        JSONArray jsonArray = null;
+        JSONObject jsonObjectDay = null;
 
         try {
+
+            // Assign a main object to jsonObject var
             jsonObject = new JSONObject(json);
-            ListOfOptions = new JSONArray();
-            ListOfOptions = jsonObject.getJSONArray("ListOfOptions");
+
+            jsonArray = jsonObject.names();
+
+            Toast.makeText(this, jsonArray.toString(), Toast.LENGTH_SHORT).show();
+
+            /**
+             * for (int i=0; jsonArray.length()<i;i++){
+
+             }
+             */
+
+
         }
         catch (JSONException e){
             e.printStackTrace();
+            Toast.makeText(this, "I couldn't read timetable correctly", Toast.LENGTH_SHORT).show();
+
         }
 
-        String standard = "";
-        // READ DATA FROM LOCAL JSON OBJECT
+        /**
+         // CHANGE JSON STRING TO JSON OBJECT
+         JSONObject jsonObject = null;
+         JSONArray Monday = null;
+         JSONArray Tuesday = null;
+         JSONArray Wednesday = null;
+         JSONArray Thursday = null;
+         JSONArray Friday = null;
+         try {
+         jsonObject = new JSONObject(json);
+         Monday = jsonObject.getJSONArray("Monday");
+         Tuesday = jsonObject.getJSONArray("Tuesday");
+         Wednesday = jsonObject.getJSONArray("Wednesday");
+         Thursday = jsonObject.getJSONArray("Thursday");
+         Friday = jsonObject.getJSONArray("Friday");
+         }
+         catch (JSONException e){
+         e.printStackTrace();
+         Toast.makeText(this, "No timetable found", Toast.LENGTH_SHORT).show();
 
-        try{
-            for (int j=0; j < ListOfOptions.length(); j++) {
-                JSONObject cit = ListOfOptions.getJSONObject(j);
-                standard = cit.getString("Standard");
-            }
-        }
-        catch (JSONException e){
-            e.printStackTrace();
-        }
+         }
 
-        System.out.println(standard + " " + "Udalo sie ODCZYTAC");
+         JSONObject CS2004_Lecture = null;
+         JSONObject CS2002_Lecture = null;
+         JSONObject CS2002_Lab = null;
+         JSONObject CS2004_Lab = null;
+         JSONObject CS2554_Lecture = null;
+         JSONObject CS2005_Lecture = null;
+         JSONObject CS2005_Lab = null;
+         JSONObject CS2001_Lab = null;
+         // READ DATA FROM LOCAL JSON OBJECT
 
+         try{
+         for (int j=0; j < Monday.length(); j++) {
+         JSONObject currentJson = jsonObject;
+         CS2004_Lecture = currentJson.getJSONObject("CS2004_Lecture");
+         CS2002_Lecture = currentJson.getJSONObject("CS2002_Lecture");
+         CS2002_Lab = currentJson.getJSONObject("CS2002_Lab");
+         CS2004_Lab = currentJson.getJSONObject("CS2004_Lab");
+         CS2554_Lecture = currentJson.getJSONObject("CS2554_Lecture");
+         CS2005_Lecture = currentJson.getJSONObject("CS2005_Lecture");
+         CS2005_Lab = currentJson.getJSONObject("CS2005_Lab");
+         CS2001_Lab = currentJson.getJSONObject("CS2001_Lab");
 
+         }
+         }
+         catch (JSONException e) {
+         e.printStackTrace();
+         }
+         catch (NullPointerException ex){
+         Toast.makeText(this, "Null pointer exception", Toast.LENGTH_SHORT).show();
+         }
+         }
+         String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+         String[] classes = {"CS2002_Lecture", "CS2004_Lecture", "CS2005_Lecture", "CS2554_Lecture",
+         "CS2001_Lab", "CS2002_Lab", "CS2004_Lab", "CS2005_Lab"};
+
+         public JSONArray whatClassesToday(JSONObject day) throws JSONException {
+         JSONArray thisClassesWillBeHappeningToday = null;
+         for (int i=0; day.length() > i; i++){
+         if (day.getJSONObject(classes[i]) == null){
+         System.out.println("Class " + day + " will not be conducted today.");
+         }
+         else {
+         thisClassesWillBeHappeningToday.put(day);
+         }
+         }
+
+         return thisClassesWillBeHappeningToday;
+         */
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -212,7 +284,7 @@ public class DayTimetableActivity extends Activity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 5;
         }
 
         @Override
